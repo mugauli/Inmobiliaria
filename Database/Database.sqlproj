@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{fd66f26e-22a4-4fae-8b2e-4e314a4d8258}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Pagos.sql" />
+    <Build Include="dbo\Tables\categoria.sql" />
+    <Build Include="dbo\Tables\presentacion.sql" />
+    <Build Include="dbo\Tables\articulo.sql" />
+    <Build Include="dbo\Tables\proveedor.sql" />
+    <Build Include="dbo\Tables\trabajador.sql" />
+    <Build Include="dbo\Tables\ingreso.sql" />
+    <Build Include="dbo\Tables\detalle_ingreso.sql" />
+    <Build Include="dbo\Tables\cliente.sql" />
+    <Build Include="dbo\Tables\venta.sql" />
+    <Build Include="dbo\Tables\detalle_venta.sql" />
+    <Build Include="dbo\Tables\XSQLErrorhandler.sql" />
+    <Build Include="dbo\Tables\tblParcela.sql" />
+    <Build Include="dbo\Tables\tblLote.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_proveedor_num_documento.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_cliente.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_cliente_apellidos.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_cliente_num_documento.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_cliente.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_cliente.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_cliente.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_trabajador.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_trabajador_apellidos.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_trabajador_num_documento.sql" />
+    <Build Include="dbo\Stored Procedures\spstock_articulos.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_trabajador.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_trabajador.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_trabajador.sql" />
+    <Build Include="dbo\Stored Procedures\tblLote_Del.sql" />
+    <Build Include="dbo\Stored Procedures\tblLote_InUp.sql" />
+    <Build Include="dbo\Stored Procedures\tblParcela_Del.sql" />
+    <Build Include="dbo\Stored Procedures\tblParcela_InUp.sql" />
+    <Build Include="dbo\Stored Procedures\splogin.sql" />
+    <Build Include="dbo\Stored Procedures\XSQLError.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_categoria.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_categoria.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_categoria.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_categoria.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_categoria.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_ingreso.sql" />
+    <Build Include="dbo\Stored Procedures\spanular_ingreso.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_detalle_ingreso.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_ingreso.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_ingreso_fecha.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_detalle_ingreso.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_presentacion.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_presentacion_nombre.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_presentacion.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_presentacion.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_presentacion.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_venta.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_articulo.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_venta_fecha.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_articulo_nombre.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_parcelas.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_venta.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_articulo.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_Lotes.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_venta.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_articulo.sql" />
+    <Build Include="dbo\Stored Procedures\spstock_Lotes.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_detalle_venta.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_articulo.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_Parcela.sql" />
+    <Build Include="dbo\Stored Procedures\spdisminuir_stock.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_Parcela.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_detalle_venta.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_Parcela.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscararticulo_venta_nombre.sql" />
+    <Build Include="dbo\Stored Procedures\spstock_Parcelas.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscararticulo_venta_codigo.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_parcela_nombre.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_Lote.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_Lote.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_Lote.sql" />
+    <Build Include="dbo\Stored Procedures\spmostrar_proveedor.sql" />
+    <Build Include="dbo\Stored Procedures\spbuscar_proveedor_razon_social.sql" />
+    <Build Include="dbo\Stored Procedures\spinsertar_proveedor.sql" />
+    <Build Include="dbo\Stored Procedures\speditar_proveedor.sql" />
+    <Build Include="dbo\Stored Procedures\speliminar_proveedor.sql" />
+    <Build Include="dbo\Stored Procedures\spreporte_factura.sql" />
+  </ItemGroup>
+</Project>
