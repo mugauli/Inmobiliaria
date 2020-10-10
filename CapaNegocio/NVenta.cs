@@ -27,10 +27,16 @@ namespace CapaNegocio
             foreach (DataRow row in dtDetalles.Rows)
             {
                 DDetalle_Venta detalle = new DDetalle_Venta();
-                detalle.Iddetalle_ingreso = Convert.ToInt32(row["iddetalle_ingreso"].ToString());
-                detalle.Cantidad = Convert.ToInt32(row["cantidad"].ToString());
-                detalle.Precio_Venta = Convert.ToDecimal(row["precio_venta"].ToString());
-                detalle.Descuento = Convert.ToDecimal(row["descuento"].ToString());
+                detalle.IdParcela= row["IdParcela"].ToString();
+                detalle.IdLote = Convert.ToInt32(row["IdLote"].ToString());
+                detalle.Medidas = row["Medidas"].ToString();
+                detalle.Ubicacion = row["Ubicacion"].ToString();
+                detalle.Precio_venta = float.Parse( row["PrecioVenta"].ToString());
+                detalle.Enganche = float.Parse(row["Enganche"].ToString());
+                detalle.Anticipo = float.Parse(row["Anticipo"].ToString());
+                detalle.Saldo = float.Parse(row["Saldo"].ToString());
+                detalle.Fecharegistro = DateTime.Parse( row["fecharegistro"].ToString());
+                detalle.NumMens= Convert.ToInt32(row["NumMens"].ToString());
                 detalles.Add(detalle);
             }
             return Obj.Insertar(Obj, detalles);
@@ -73,6 +79,10 @@ namespace CapaNegocio
             DVenta Obj = new DVenta();
             return Obj.MostrarArticulo_Venta_codigo(textobuscar);
         }
-        
+        public static DataTable calculo_Mensualidades(float monto, int numMens, DateTime fecha_inicio)
+        {
+            DVenta Obj = new DVenta();
+            return Obj.calculoMensualidad_temporal( monto,  numMens, fecha_inicio);
+        }
     }
 }

@@ -13,9 +13,9 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class FrmVistaArticulo_Venta : Form
+    public partial class FrmVistaLote_Venta : Form
     {
-        public FrmVistaArticulo_Venta()
+        public FrmVistaLote_Venta()
         {
             InitializeComponent();
         }
@@ -24,8 +24,8 @@ namespace CapaPresentacion
         //Método para ocultar columnas
         private void OcultarColumnas()
         {
-            this.dataListado.Columns[0].Visible = false;
-            this.dataListado.Columns[1].Visible = false;
+           // this.dataListado.Columns[0].Visible = false;
+           // this.dataListado.Columns[1].Visible = false;
         }
 
         //Método BuscarNombre
@@ -38,7 +38,7 @@ namespace CapaPresentacion
 
         private void MostrarArticulo_Venta_Codigo()
         {
-            this.dataListado.DataSource = NVenta.MostrarArticulo_Venta_Codigo(this.txtBuscar.Text);
+            this.dataListado.DataSource = NLote.LotesxParcela(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -46,35 +46,29 @@ namespace CapaPresentacion
 
         private void FrmVistaArticulo_Venta_Load(object sender, EventArgs e)
         {
-
+            this.MostrarArticulo_Venta_Codigo();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.Text.Equals("Codigo"))
-            {
+             
                 this.MostrarArticulo_Venta_Codigo();
-            }
-            else if (cbBuscar.Text.Equals("Nombre"))
-            {
-                this.MostrarArticulo_Venta_Nombre();
-            }
+             
+                //this.MostrarArticulo_Venta_Nombre();
+             
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             FrmVenta form = FrmVenta.GetInstancia();
-            string par1, par2;
-            decimal par3, par4;
-            int par5;
-            DateTime par6;
-            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["iddetalle_ingreso"].Value);
-            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
-            par3 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["precio_compra"].Value);
-            par4 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["precio_venta"].Value);
-            par5 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["stock_actual"].Value);
-            par6 = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha_vencimiento"].Value);
-            form.setArticulo(par1, par2, par3, par4, par5, par6);
+            string idParcela, NombreParcela, idLote, medidas, ubicacion;
+
+            idParcela = Convert.ToString(this.dataListado.CurrentRow.Cells["idParcela"].Value);
+            NombreParcela = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreParcela"].Value);
+            idLote = Convert.ToString(this.dataListado.CurrentRow.Cells["idLote"].Value);
+            medidas = Convert.ToString(this.dataListado.CurrentRow.Cells["medidas"].Value);
+            ubicacion = Convert.ToString(this.dataListado.CurrentRow.Cells["ubicacion"].Value);
+             form.setLote(idParcela, NombreParcela, idLote, medidas, ubicacion);
             this.Hide();
         }
     }

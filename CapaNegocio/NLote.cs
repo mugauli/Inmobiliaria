@@ -67,5 +67,13 @@ namespace CapaNegocio
         {
             return new DLote().Stock_Lotes();
         }
+
+        public static DataTable  LotesxParcela(string idParcela)
+        {
+            DLote Obj = new DLote();
+            Obj.idParcela = idParcela;
+           
+            return Obj.MostrarxParcela();
+        }
     }
 }

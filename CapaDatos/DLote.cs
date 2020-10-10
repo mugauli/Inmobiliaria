@@ -167,6 +167,7 @@ namespace CapaDatos
 
         public DataTable Mostrar()
         {
+            //[spmostrar_Lotes_Parcela]
             DataTable DtResultado = new DataTable("lote");
             SqlConnection SqlCon = new SqlConnection();
             try
@@ -176,6 +177,35 @@ namespace CapaDatos
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "spmostrar_Lotes";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+        public DataTable MostrarxParcela()
+        {
+            //[spmostrar_Lotes_Parcela]
+            DataTable DtResultado = new DataTable("lote");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spmostrar_Lotes_Parcela";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter[] parameters = {
+                new SqlParameter("@idParcela", SqlDbType.VarChar, 15) };
+                parameters[0].Value = this.idParcela;
+
+
+                SqlCmd.Parameters.AddRange(parameters);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);

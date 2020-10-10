@@ -105,6 +105,12 @@
     <Compile Include="frmArticulo.Designer.cs">
       <DependentUpon>frmArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMensualidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMensualidades.Designer.cs">
+      <DependentUpon>FrmMensualidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmParcelas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,11 +177,11 @@
     <Compile Include="FrmVistaArticulo_Ingreso.Designer.cs">
       <DependentUpon>FrmVistaArticulo_Ingreso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVistaArticulo_Venta.cs">
+    <Compile Include="FrmVistaLote_Venta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVistaArticulo_Venta.Designer.cs">
-      <DependentUpon>FrmVistaArticulo_Venta.cs</DependentUpon>
+    <Compile Include="FrmVistaLote_Venta.Designer.cs">
+      <DependentUpon>FrmVistaLote_Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVistaParcela_Lote.cs">
       <SubType>Form</SubType>
@@ -295,6 +301,9 @@
     <EmbeddedResource Include="frmArticulo.resx">
       <DependentUpon>frmArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMensualidades.resx">
+      <DependentUpon>FrmMensualidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmParcelas.resx">
       <DependentUpon>frmParcelas.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,8 +337,8 @@
     <EmbeddedResource Include="FrmVistaArticulo_Ingreso.resx">
       <DependentUpon>FrmVistaArticulo_Ingreso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVistaArticulo_Venta.resx">
-      <DependentUpon>FrmVistaArticulo_Venta.cs</DependentUpon>
+    <EmbeddedResource Include="FrmVistaLote_Venta.resx">
+      <DependentUpon>FrmVistaLote_Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaParcela_Lote.resx">
       <DependentUpon>frmVistaParcela_Lote.cs</DependentUpon>

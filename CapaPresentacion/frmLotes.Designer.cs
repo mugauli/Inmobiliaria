@@ -56,46 +56,46 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbIdestatus = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnBuscarCategoria = new System.Windows.Forms.Button();
             this.txtIdParcela = new System.Windows.Forms.TextBox();
             this.txtParcela = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.pxImagen = new System.Windows.Forms.PictureBox();
             this.txtNorte = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
             this.chkEliminar = new System.Windows.Forms.CheckBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnBuscarCategoria = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnCargar = new System.Windows.Forms.Button();
-            this.pxImagen = new System.Windows.Forms.PictureBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -276,6 +276,17 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Estatus:";
             // 
+            // btnBuscarCategoria
+            // 
+            this.btnBuscarCategoria.Image = global::CapaPresentacion.Properties.Resources.Buscar_p;
+            this.btnBuscarCategoria.Location = new System.Drawing.Point(537, 45);
+            this.btnBuscarCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
+            this.btnBuscarCategoria.Size = new System.Drawing.Size(32, 25);
+            this.btnBuscarCategoria.TabIndex = 18;
+            this.btnBuscarCategoria.UseVisualStyleBackColor = true;
+            this.btnBuscarCategoria.Click += new System.EventHandler(this.btnBuscarCategoria_Click);
+            // 
             // txtIdParcela
             // 
             this.txtIdParcela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -305,309 +316,6 @@
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Parcela:";
-            // 
-            // txtNorte
-            // 
-            this.txtNorte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txtNorte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNorte.Location = new System.Drawing.Point(82, 85);
-            this.txtNorte.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNorte.MaxLength = 50;
-            this.txtNorte.Name = "txtNorte";
-            this.txtNorte.Size = new System.Drawing.Size(94, 20);
-            this.txtNorte.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 87);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Norte:";
-            // 
-            // txtUbicacion
-            // 
-            this.txtUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txtUbicacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUbicacion.Location = new System.Drawing.Point(82, 182);
-            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUbicacion.MaxLength = 300;
-            this.txtUbicacion.Multiline = true;
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtUbicacion.Size = new System.Drawing.Size(255, 57);
-            this.txtUbicacion.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 196);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Ubicación:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(18, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 29);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Lotes";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.ultraGrid1);
-            this.tabPage1.Controls.Add(this.dataListado);
-            this.tabPage1.Controls.Add(this.lblTotal);
-            this.tabPage1.Controls.Add(this.chkEliminar);
-            this.tabPage1.Controls.Add(this.btnImprimir);
-            this.tabPage1.Controls.Add(this.btnEliminar);
-            this.tabPage1.Controls.Add(this.btnBuscar);
-            this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(632, 310);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listado";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataListado
-            // 
-            this.dataListado.AllowUserToAddRows = false;
-            this.dataListado.AllowUserToDeleteRows = false;
-            this.dataListado.AllowUserToOrderColumns = true;
-            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(10, 87);
-            this.dataListado.Margin = new System.Windows.Forms.Padding(2);
-            this.dataListado.MultiSelect = false;
-            this.dataListado.Name = "dataListado";
-            this.dataListado.ReadOnly = true;
-            this.dataListado.RowTemplate.Height = 24;
-            this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(613, 27);
-            this.dataListado.TabIndex = 7;
-            this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
-            this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
-            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(375, 64);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(35, 13);
-            this.lblTotal.TabIndex = 6;
-            this.lblTotal.Text = "label3";
-            // 
-            // chkEliminar
-            // 
-            this.chkEliminar.AutoSize = true;
-            this.chkEliminar.Location = new System.Drawing.Point(10, 64);
-            this.chkEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.chkEliminar.Name = "chkEliminar";
-            this.chkEliminar.Size = new System.Drawing.Size(62, 17);
-            this.chkEliminar.TabIndex = 5;
-            this.chkEliminar.Text = "Eliminar";
-            this.chkEliminar.UseVisualStyleBackColor = true;
-            this.chkEliminar.Visible = false;
-            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(78, 28);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(133, 20);
-            this.txtBuscar.TabIndex = 1;
-            this.txtBuscar.Visible = false;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Código:";
-            this.label2.Visible = false;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(9, 54);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(640, 336);
-            this.tabControl1.TabIndex = 7;
-            // 
-            // ttMensaje
-            // 
-            this.ttMensaje.IsBalloon = true;
-            // 
-            // errorIcono
-            // 
-            this.errorIcono.ContainerControl = this;
-            // 
-            // ultraGrid1
-            // 
-            appearance1.BackColor = System.Drawing.SystemColors.Window;
-            appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ultraGrid1.DisplayLayout.Appearance = appearance1;
-            ultraGridBand1.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
-            ultraGridBand1.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
-            ultraGridBand1.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
-            this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
-            this.ultraGrid1.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            this.ultraGrid1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            appearance2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            appearance2.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance2.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance2.BorderColor = System.Drawing.SystemColors.Window;
-            this.ultraGrid1.DisplayLayout.GroupByBox.Appearance = appearance2;
-            appearance3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.ultraGrid1.DisplayLayout.GroupByBox.BandLabelAppearance = appearance3;
-            this.ultraGrid1.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            appearance4.BackColor2 = System.Drawing.SystemColors.Control;
-            appearance4.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.ultraGrid1.DisplayLayout.GroupByBox.PromptAppearance = appearance4;
-            this.ultraGrid1.DisplayLayout.MaxColScrollRegions = 1;
-            this.ultraGrid1.DisplayLayout.MaxRowScrollRegions = 1;
-            appearance5.BackColor = System.Drawing.SystemColors.Window;
-            appearance5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ultraGrid1.DisplayLayout.Override.ActiveCellAppearance = appearance5;
-            appearance6.BackColor = System.Drawing.SystemColors.Highlight;
-            appearance6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.ultraGrid1.DisplayLayout.Override.ActiveRowAppearance = appearance6;
-            this.ultraGrid1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
-            this.ultraGrid1.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
-            appearance7.BackColor = System.Drawing.SystemColors.Window;
-            this.ultraGrid1.DisplayLayout.Override.CardAreaAppearance = appearance7;
-            appearance8.BorderColor = System.Drawing.Color.Silver;
-            appearance8.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
-            this.ultraGrid1.DisplayLayout.Override.CellAppearance = appearance8;
-            this.ultraGrid1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
-            this.ultraGrid1.DisplayLayout.Override.CellPadding = 0;
-            appearance9.BackColor = System.Drawing.SystemColors.Control;
-            appearance9.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance9.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
-            appearance9.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance9.BorderColor = System.Drawing.SystemColors.Window;
-            this.ultraGrid1.DisplayLayout.Override.GroupByRowAppearance = appearance9;
-            appearance10.TextHAlignAsString = "Left";
-            this.ultraGrid1.DisplayLayout.Override.HeaderAppearance = appearance10;
-            this.ultraGrid1.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            this.ultraGrid1.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
-            appearance11.BackColor = System.Drawing.SystemColors.Window;
-            appearance11.BorderColor = System.Drawing.Color.Silver;
-            this.ultraGrid1.DisplayLayout.Override.RowAppearance = appearance11;
-            this.ultraGrid1.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
-            appearance12.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ultraGrid1.DisplayLayout.Override.TemplateAddRowAppearance = appearance12;
-            this.ultraGrid1.DisplayLayout.Override.WrapHeaderText = Infragistics.Win.DefaultableBoolean.True;
-            this.ultraGrid1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.ultraGrid1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.ultraGrid1.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
-            this.ultraGrid1.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
-            this.ultraGrid1.Location = new System.Drawing.Point(10, 80);
-            this.ultraGrid1.Name = "ultraGrid1";
-            this.ultraGrid1.Size = new System.Drawing.Size(613, 230);
-            this.ultraGrid1.TabIndex = 9;
-            this.ultraGrid1.Text = "ultraGrid1";
-            this.ultraGrid1.DoubleClickRow += new Infragistics.Win.UltraWinGrid.DoubleClickRowEventHandler(this.ultraGrid1_DoubleClickRow);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.pencil_scale;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(169, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 48);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackColor = System.Drawing.Color.Silver;
-            this.btnImprimir.Image = global::CapaPresentacion.Properties.Resources.imprimir;
-            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(427, 27);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(88, 28);
-            this.btnImprimir.TabIndex = 4;
-            this.btnImprimir.Text = "&Imprimir";
-            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Silver;
-            this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(329, 27);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(81, 28);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "&Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
-            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar_p;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(234, 27);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(79, 28);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "&Buscar";
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Visible = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnBuscarCategoria
-            // 
-            this.btnBuscarCategoria.Image = global::CapaPresentacion.Properties.Resources.Buscar_p;
-            this.btnBuscarCategoria.Location = new System.Drawing.Point(537, 45);
-            this.btnBuscarCategoria.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
-            this.btnBuscarCategoria.Size = new System.Drawing.Size(32, 25);
-            this.btnBuscarCategoria.TabIndex = 18;
-            this.btnBuscarCategoria.UseVisualStyleBackColor = true;
-            this.btnBuscarCategoria.Click += new System.EventHandler(this.btnBuscarCategoria_Click);
             // 
             // btnLimpiar
             // 
@@ -645,6 +353,27 @@
             this.pxImagen.TabIndex = 12;
             this.pxImagen.TabStop = false;
             this.pxImagen.Visible = false;
+            // 
+            // txtNorte
+            // 
+            this.txtNorte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txtNorte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNorte.Location = new System.Drawing.Point(82, 85);
+            this.txtNorte.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNorte.MaxLength = 50;
+            this.txtNorte.Name = "txtNorte";
+            this.txtNorte.Size = new System.Drawing.Size(94, 20);
+            this.txtNorte.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(36, 87);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Norte:";
             // 
             // btnCancelar
             // 
@@ -706,6 +435,278 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // txtUbicacion
+            // 
+            this.txtUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txtUbicacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUbicacion.Location = new System.Drawing.Point(82, 182);
+            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUbicacion.MaxLength = 300;
+            this.txtUbicacion.Multiline = true;
+            this.txtUbicacion.Name = "txtUbicacion";
+            this.txtUbicacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtUbicacion.Size = new System.Drawing.Size(255, 57);
+            this.txtUbicacion.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 196);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Ubicación:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(18, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 29);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Lotes";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.ultraGrid1);
+            this.tabPage1.Controls.Add(this.dataListado);
+            this.tabPage1.Controls.Add(this.lblTotal);
+            this.tabPage1.Controls.Add(this.chkEliminar);
+            this.tabPage1.Controls.Add(this.btnImprimir);
+            this.tabPage1.Controls.Add(this.btnEliminar);
+            this.tabPage1.Controls.Add(this.btnBuscar);
+            this.tabPage1.Controls.Add(this.txtBuscar);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(632, 310);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Listado";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ultraGrid1
+            // 
+            appearance1.BackColor = System.Drawing.SystemColors.Window;
+            appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ultraGrid1.DisplayLayout.Appearance = appearance1;
+            ultraGridBand1.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            ultraGridBand1.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            ultraGridBand1.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+            this.ultraGrid1.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.ultraGrid1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            appearance2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            appearance2.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance2.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance2.BorderColor = System.Drawing.SystemColors.Window;
+            this.ultraGrid1.DisplayLayout.GroupByBox.Appearance = appearance2;
+            appearance3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.ultraGrid1.DisplayLayout.GroupByBox.BandLabelAppearance = appearance3;
+            this.ultraGrid1.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.ultraGrid1.DisplayLayout.GroupByBox.Hidden = true;
+            appearance4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            appearance4.BackColor2 = System.Drawing.SystemColors.Control;
+            appearance4.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.ultraGrid1.DisplayLayout.GroupByBox.PromptAppearance = appearance4;
+            this.ultraGrid1.DisplayLayout.MaxColScrollRegions = 1;
+            this.ultraGrid1.DisplayLayout.MaxRowScrollRegions = 1;
+            appearance5.BackColor = System.Drawing.SystemColors.Window;
+            appearance5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ultraGrid1.DisplayLayout.Override.ActiveCellAppearance = appearance5;
+            appearance6.BackColor = System.Drawing.SystemColors.Highlight;
+            appearance6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ultraGrid1.DisplayLayout.Override.ActiveRowAppearance = appearance6;
+            this.ultraGrid1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
+            this.ultraGrid1.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
+            appearance7.BackColor = System.Drawing.SystemColors.Window;
+            this.ultraGrid1.DisplayLayout.Override.CardAreaAppearance = appearance7;
+            appearance8.BorderColor = System.Drawing.Color.Silver;
+            appearance8.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
+            this.ultraGrid1.DisplayLayout.Override.CellAppearance = appearance8;
+            this.ultraGrid1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            this.ultraGrid1.DisplayLayout.Override.CellPadding = 0;
+            appearance9.BackColor = System.Drawing.SystemColors.Control;
+            appearance9.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance9.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+            appearance9.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance9.BorderColor = System.Drawing.SystemColors.Window;
+            this.ultraGrid1.DisplayLayout.Override.GroupByRowAppearance = appearance9;
+            appearance10.TextHAlignAsString = "Left";
+            this.ultraGrid1.DisplayLayout.Override.HeaderAppearance = appearance10;
+            this.ultraGrid1.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            this.ultraGrid1.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
+            appearance11.BackColor = System.Drawing.SystemColors.Window;
+            appearance11.BorderColor = System.Drawing.Color.Silver;
+            this.ultraGrid1.DisplayLayout.Override.RowAppearance = appearance11;
+            this.ultraGrid1.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            appearance12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ultraGrid1.DisplayLayout.Override.TemplateAddRowAppearance = appearance12;
+            this.ultraGrid1.DisplayLayout.Override.WrapHeaderText = Infragistics.Win.DefaultableBoolean.True;
+            this.ultraGrid1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.ultraGrid1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.ultraGrid1.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
+            this.ultraGrid1.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+            this.ultraGrid1.Location = new System.Drawing.Point(10, 80);
+            this.ultraGrid1.Name = "ultraGrid1";
+            this.ultraGrid1.Size = new System.Drawing.Size(613, 230);
+            this.ultraGrid1.TabIndex = 9;
+            this.ultraGrid1.Text = "ultraGrid1";
+            this.ultraGrid1.DoubleClickRow += new Infragistics.Win.UltraWinGrid.DoubleClickRowEventHandler(this.ultraGrid1_DoubleClickRow);
+            // 
+            // dataListado
+            // 
+            this.dataListado.AllowUserToAddRows = false;
+            this.dataListado.AllowUserToDeleteRows = false;
+            this.dataListado.AllowUserToOrderColumns = true;
+            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar});
+            this.dataListado.Location = new System.Drawing.Point(10, 87);
+            this.dataListado.Margin = new System.Windows.Forms.Padding(2);
+            this.dataListado.MultiSelect = false;
+            this.dataListado.Name = "dataListado";
+            this.dataListado.ReadOnly = true;
+            this.dataListado.RowTemplate.Height = 24;
+            this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataListado.Size = new System.Drawing.Size(613, 27);
+            this.dataListado.TabIndex = 7;
+            this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
+            this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(375, 64);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(35, 13);
+            this.lblTotal.TabIndex = 6;
+            this.lblTotal.Text = "label3";
+            // 
+            // chkEliminar
+            // 
+            this.chkEliminar.AutoSize = true;
+            this.chkEliminar.Location = new System.Drawing.Point(10, 64);
+            this.chkEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.chkEliminar.Name = "chkEliminar";
+            this.chkEliminar.Size = new System.Drawing.Size(62, 17);
+            this.chkEliminar.TabIndex = 5;
+            this.chkEliminar.Text = "Eliminar";
+            this.chkEliminar.UseVisualStyleBackColor = true;
+            this.chkEliminar.Visible = false;
+            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.Silver;
+            this.btnImprimir.Image = global::CapaPresentacion.Properties.Resources.imprimir;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(427, 27);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(88, 28);
+            this.btnImprimir.TabIndex = 4;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Silver;
+            this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(329, 27);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(81, 28);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "&Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
+            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar_p;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(234, 27);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(79, 28);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "&Buscar";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Visible = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(78, 28);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(133, 20);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.Visible = false;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Código:";
+            this.label2.Visible = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(9, 54);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(640, 336);
+            this.tabControl1.TabIndex = 7;
+            // 
+            // ttMensaje
+            // 
+            this.ttMensaje.IsBalloon = true;
+            // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.pencil_scale;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(169, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(68, 48);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -723,14 +724,14 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -134,6 +134,40 @@ namespace CapaDatos
             return rpta;
         }
 
+        public DataTable calculoMensualidad_temporal(float monto, int numMens, DateTime fecha_inicio)
+        {
+            
+            //[spmostrar_Lotes_Parcela]
+            DataTable DtResultado = new DataTable("Mensualidad");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spcalculoMensualidad_temporal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter[] parameters = {
+                new SqlParameter("@monto", SqlDbType.Float, 15),
+                 new SqlParameter("@cnt_total", SqlDbType.Int ),
+                 new SqlParameter("@fecha", SqlDbType.DateTime, 15)};
+                parameters[0].Value = monto;
+                parameters[1].Value = numMens;
+                parameters[2].Value = fecha_inicio;
+
+                SqlCmd.Parameters.AddRange(parameters);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
         public string Insertar(DVenta Venta, List<DDetalle_Venta> Detalle)
         {
             string rpta = "";
@@ -217,7 +251,7 @@ namespace CapaDatos
                     foreach (DDetalle_Venta det in Detalle)
                     {
                         det.Idventa = this.Idventa;
-                        //Llamar al método insertar de la clase DDetalle_Ingreso
+                        //Llamar al método insertar detalle de venta
                         rpta = det.Insertar(det, ref SqlCon, ref SqlTra);
                         if (!rpta.Equals("OK"))
                         {
@@ -225,13 +259,21 @@ namespace CapaDatos
                         }
                         else
                         {
-                            //Actualizamos el stock
-                            rpta = DisminuirStock(det.Iddetalle_ingreso, det.Cantidad);
-                            if (!rpta.Equals("OK"))
+                            if (_Tipo_Comprobante == "Venta")
                             {
+                                //Lllamar metodo de insertar mensualidades 
+                                rpta = det.InsertarMensualidades(det, ref SqlCon, ref SqlTra);
+                                if (!rpta.Equals("OK"))
+                                {
+                                    break;
+                                }
+                            }
+                            else {
+                                //No se generan mensualidades porque fue apartado.
                                 break;
                             }
                         }
+                        
                     }
 
                 }

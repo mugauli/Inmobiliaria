@@ -17,9 +17,8 @@ namespace CapaPresentacion
         private bool IsNuevo = false;
         public int Idtrabajador;
         private DataTable dtDetalle;
-        private float totalSaldo = 0; 
 
-        private float totalPagado = 0;
+        private decimal totalPagado = 0;
 
         private static FrmVenta _instancia;
 
@@ -38,15 +37,16 @@ namespace CapaPresentacion
             this.txtCliente.Text = nombre;
         }
 
-        public void setLote (string idParcela,string NombreParcela,string idLote,string medidas,string ubicacion)
+        public void setArticulo (string iddetalle_ingreso,string nombre,
+            decimal precio_compra,decimal precio_venta,int stock,
+            DateTime fecha_vencimiento)
         {
-            this.txtIdParcela.Text = idParcela;
-            this.txtParcela.Text = NombreParcela;
-            this.txtlote.Text = idLote;
-            this.txtmedidas.Text = medidas;
-            this.txtUbicacion.Text = ubicacion;
-            //this.txtStock_Actual.Text = ubicacion;
-            //this.dtFecha_Vencimiento.Value = fecha_vencimiento;
+            this.txtIdarticulo.Text = iddetalle_ingreso;
+            this.txtArticulo.Text = nombre;
+            this.txtPrecio_Compra.Text = Convert.ToString(precio_compra);
+            this.txtPrecio_Venta.Text = Convert.ToString(precio_venta);
+            this.txtStock_Actual.Text = Convert.ToString(stock);
+            this.dtFecha_Vencimiento.Value = fecha_vencimiento;
         }
 
         public FrmVenta()
@@ -55,15 +55,15 @@ namespace CapaPresentacion
             this.ttMensaje.SetToolTip(this.txtCliente,"Seleccione un Cliente");
             this.ttMensaje.SetToolTip(this.txtSerie, "Ingrese una serie del comprobante");
             this.ttMensaje.SetToolTip(this.txtCorrelativo, "Ingrese un número del comprobante");
-            this.ttMensaje.SetToolTip(this.txtParcela, "Ingrese la Cantidad del Artículo a Vender");
-            this.ttMensaje.SetToolTip(this.txtlote, "Seleccione un Artículo");
+            this.ttMensaje.SetToolTip(this.txtCantidad, "Ingrese la Cantidad del Artículo a Vender");
+            this.ttMensaje.SetToolTip(this.txtArticulo, "Seleccione un Artículo");
             this.txtIdcliente.Visible = false;
-            //this.txtIdarticulo.Visible = false;
+            this.txtIdarticulo.Visible = false;
             this.txtCliente.ReadOnly = true;
-            this.txtlote.ReadOnly = true;
+            this.txtArticulo.ReadOnly = true;
             this.dtFecha_Vencimiento.Enabled = false;
-            this.txtPrecioVenta.ReadOnly = true;
-            //this.txtStock_Actual.ReadOnly = true;
+            this.txtPrecio_Compra.ReadOnly = true;
+            this.txtStock_Actual.ReadOnly = true;
         }
         //Mostrar Mensaje de Confirmación
         private void MensajeOk(string mensaje)
@@ -87,21 +87,20 @@ namespace CapaPresentacion
             this.txtCliente.Text = string.Empty;
             this.txtSerie.Text = string.Empty;
             this.txtCorrelativo.Text = string.Empty;
+            this.txtIgv.Text = string.Empty;
             this.lblTotal_Pagado.Text = "0,0";
-            this.lblTotal_Saldo.Text = "0,0";
+            this.txtIgv.Text = "18";
             this.crearTabla();
         }
         private void limpiarDetalle()
         {
-            this.txtUbicacion.Text = string.Empty;
-            this.txtlote.Text = string.Empty;
-            this.txtmedidas.Text = string.Empty;
-            this.txtParcela.Text = string.Empty;
-            this.txtIdParcela.Text = string.Empty;
-            this.txtPrecioVenta.Text = "0.00";
-            this.txtEnganche.Text = "0.00";
-            this.txtAnticipo.Text = "0.00";
-            this.txtMens.Text = "0";
+            this.txtIdarticulo.Text = string.Empty;
+            this.txtArticulo.Text = string.Empty;
+            this.txtStock_Actual.Text = string.Empty;
+            this.txtCantidad.Text = string.Empty;
+            this.txtPrecio_Compra.Text = string.Empty;
+            this.txtPrecio_Venta.Text = string.Empty;
+            this.txtDescuento.Text = string.Empty;
         }
 
         //Habilitar los controles del formulario
@@ -110,14 +109,14 @@ namespace CapaPresentacion
             this.txtIdventa.ReadOnly = !valor;
             this.txtSerie.ReadOnly = !valor;
             this.txtCorrelativo.ReadOnly = !valor;
-            //this.txtIgv.ReadOnly = !valor;
+            this.txtIgv.ReadOnly = !valor;
             this.dtFecha.Enabled = valor;
             this.cbTipo_Comprobante.Enabled = valor;
-            this.txtParcela.ReadOnly = !valor;
-            this.txtPrecioVenta.ReadOnly = !valor;
-            this.txtEnganche.ReadOnly = !valor;
-            //this.txtStock_Actual.ReadOnly = !valor;
-            this.txtAnticipo.ReadOnly = !valor;
+            this.txtCantidad.ReadOnly = !valor;
+            this.txtPrecio_Compra.ReadOnly = !valor;
+            this.txtPrecio_Venta.ReadOnly = !valor;
+            this.txtStock_Actual.ReadOnly = !valor;
+            this.txtDescuento.ReadOnly = !valor;
             this.dtFecha_Vencimiento.Enabled = valor;
 
             this.btnBuscarArticulo.Enabled = valor;
@@ -149,8 +148,8 @@ namespace CapaPresentacion
         //Método para ocultar columnas
         private void OcultarColumnas()
         {
-           // this.dataListado.Columns[0].Visible = false;
-           // this.dataListado.Columns[1].Visible = false;
+            this.dataListado.Columns[0].Visible = false;
+            this.dataListado.Columns[1].Visible = false;
 
         }
 
@@ -177,23 +176,17 @@ namespace CapaPresentacion
 
         }
         private void crearTabla()
-        {// idParcela, NombreParcela, idLote, medidas, ubicacion
+        {
             this.dtDetalle = new DataTable("Detalle");
-            this.dtDetalle.Columns.Add("IdParcela", System.Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("NombreParcela", System.Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("IdLote", System.Type.GetType("System.Int32"));
-            this.dtDetalle.Columns.Add("Medidas", System.Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("Ubicacion", System.Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("PrecioVenta", System.Type.GetType("System.Decimal"));
-            this.dtDetalle.Columns.Add("Enganche", System.Type.GetType("System.Decimal"));
-            this.dtDetalle.Columns.Add("Anticipo", System.Type.GetType("System.Decimal"));
-            this.dtDetalle.Columns.Add("Saldo", System.Type.GetType("System.Decimal"));
-            this.dtDetalle.Columns.Add("fecharegistro", System.Type.GetType("System.DateTime"));
-            this.dtDetalle.Columns.Add("NumMens", System.Type.GetType("System.Int32"));
-            
+            this.dtDetalle.Columns.Add("iddetalle_ingreso", System.Type.GetType("System.Int32"));
+            this.dtDetalle.Columns.Add("articulo", System.Type.GetType("System.String"));
+            this.dtDetalle.Columns.Add("cantidad", System.Type.GetType("System.Int32"));
+            this.dtDetalle.Columns.Add("precio_venta", System.Type.GetType("System.Decimal"));
+            this.dtDetalle.Columns.Add("descuento", System.Type.GetType("System.Decimal"));
+            this.dtDetalle.Columns.Add("subtotal", System.Type.GetType("System.Decimal"));
+            this.dtDetalle.Columns.Add("Impuesto", System.Type.GetType("System.Decimal"));
             //Relacionar nuestro DataGRidView con nuestro DataTable
             this.dataListadoDetalle.DataSource = this.dtDetalle;
-            
 
         }
 
@@ -220,7 +213,7 @@ namespace CapaPresentacion
 
         private void btnBuscarArticulo_Click(object sender, EventArgs e)
         {
-            FrmVistaLote_Venta vista = new FrmVistaLote_Venta();
+            FrmVistaArticulo_Venta vista = new FrmVistaArticulo_Venta();
             vista.ShowDialog();
         }
 
@@ -277,6 +270,7 @@ namespace CapaPresentacion
             this.txtSerie.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["serie"].Value);
             this.txtCorrelativo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["correlativo"].Value);
             this.lblTotal_Pagado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["total"].Value);
+            this.txtIgv.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Impuesto"].Value);
             this.MostrarDetalle();
             this.tabControl1.SelectedIndex = 1;
         }
@@ -327,13 +321,13 @@ namespace CapaPresentacion
             {
                 string rpta = "";
                 if (this.txtIdcliente.Text == string.Empty || this.txtSerie.Text == string.Empty
-                    || this.txtCorrelativo.Text == string.Empty )
+                    || this.txtCorrelativo.Text == string.Empty || this.txtIgv.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
                     errorIcono.SetError(txtIdcliente, "Ingrese un Valor");
                     errorIcono.SetError(txtSerie, "Ingrese un Valor");
                     errorIcono.SetError(txtCorrelativo, "Ingrese un Valor");
-                    //errorIcono.SetError(txtIgv, "Ingrese un Valor");
+                    errorIcono.SetError(txtIgv, "Ingrese un Valor");
                 }
                 else
                 {
@@ -342,7 +336,7 @@ namespace CapaPresentacion
                     {
                         rpta = NVenta.Insertar(Convert.ToInt32(this.txtIdcliente.Text),Idtrabajador,
                             dtFecha.Value, cbTipo_Comprobante.Text, txtSerie.Text, txtCorrelativo.Text,
-                            0, dtDetalle);
+                            Convert.ToDecimal(txtIgv.Text), dtDetalle);
 
                     }
 
@@ -382,59 +376,48 @@ namespace CapaPresentacion
             try
             {
                 
-                if (this.txtlote.Text == string.Empty 
-                    || this.txtParcela.Text == string.Empty
-                    || this.txtAnticipo.Text == string.Empty
-                    || this.txtEnganche.Text == string.Empty)
+                if (this.txtIdarticulo.Text == string.Empty || this.txtCantidad.Text == string.Empty
+                    || this.txtDescuento.Text == string.Empty|| this.txtPrecio_Venta.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
-                    errorIcono.SetError(txtlote, "Ingrese un Valor");
-                    errorIcono.SetError(txtParcela, "Ingrese un Valor");
-                    errorIcono.SetError(txtPrecioVenta, "Ingrese un Valor");
-                    errorIcono.SetError(txtAnticipo, "Ingrese un Valor");
-                    errorIcono.SetError(txtEnganche, "Ingrese un Valor");
+                    errorIcono.SetError(txtIdarticulo, "Ingrese un Valor");
+                    errorIcono.SetError(txtCantidad, "Ingrese un Valor");
+                    errorIcono.SetError(txtDescuento, "Ingrese un Valor");
+                    errorIcono.SetError(txtPrecio_Venta, "Ingrese un Valor");
                 }
                 else
                 {
                     bool registrar = true;
                     foreach (DataRow row in dtDetalle.Rows)
                     {
-                        if (Convert.ToInt32(row["idLote"])==Convert.ToInt32(this.txtlote.Text) && row["IdParcela"].ToString() == this.txtIdParcela.Text.Trim())
+                        if (Convert.ToInt32(row["iddetalle_ingreso"])==Convert.ToInt32(this.txtIdarticulo.Text))
                         {
                             registrar = false;
-                            this.MensajeError("Ya se encuentra el lote registrado en el detalle.");
+                            this.MensajeError("YA se encuentra el artículo en el detalle");
                         }
                     }
-
-                    if (registrar)
+                    if (registrar && Convert.ToInt32(txtCantidad.Text)<=Convert.ToInt32(txtStock_Actual.Text))
                     {
-                        //float subTotal=float.Parse(this.txtPrecioVenta.Text)-float.Parse(this.txtAnticipo.Text);
-                        float PrecioVenta = float.Parse(txtPrecioVenta.Text.Trim());
-                        float Enganche  = float.Parse(txtEnganche.Text.Trim());
-                        float Anticipo = float.Parse(txtAnticipo.Text.Trim());
-                        float Saldo = PrecioVenta - Enganche - Anticipo;
+                        decimal subTotal=Convert.ToDecimal(this.txtCantidad.Text)*Convert.ToDecimal(this.txtPrecio_Venta.Text)-Convert.ToDecimal(this.txtDescuento.Text);
+                        totalPagado = totalPagado + subTotal;
+                        this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00#");
                         //Agregar ese detalle al datalistadoDetalle
                         DataRow row = this.dtDetalle.NewRow();
-                        row["IdParcela"] = txtIdParcela.Text.Trim();
-                        row["NombreParcela"] = txtParcela.Text.Trim();
-                        row["IdLote"] = txtlote.Text.Trim();
-                        row["Medidas"] = txtmedidas.Text.Trim();
-                        row["Ubicacion"] = txtUbicacion.Text.Trim();
-                        row["PrecioVenta"] = PrecioVenta;
-                        row["Enganche"] = Enganche;
-                        row["Anticipo"] = Anticipo;
-                        row["Saldo"] = Saldo;
-                        row["fecharegistro"] = dtFecha_Vencimiento.Value;
-                        row["NumMens"] = txtMens.Text.Trim();
-                        //row["subtotal"] = subTotal;
+                        row["iddetalle_ingreso"] = Convert.ToInt32(this.txtIdarticulo.Text);
+                        row["articulo"] = this.txtArticulo.Text;
+                        row["cantidad"] = Convert.ToInt32(this.txtCantidad.Text);
+                        row["precio_venta"] = Convert.ToDecimal(this.txtPrecio_Venta.Text);
+                        row["descuento"] = Convert.ToDecimal(this.txtDescuento.Text);
+                        row["subtotal"] = subTotal;
                         this.dtDetalle.Rows.Add(row);
                         this.limpiarDetalle();
-                        totalPagado = totalPagado + Enganche + Anticipo;
-                        totalSaldo = totalSaldo + Saldo;
-                        lblTotal_Pagado.Text=totalPagado.ToString("0,0.00", System.Globalization.CultureInfo.InvariantCulture);
-                        lblTotal_Saldo.Text = totalSaldo.ToString("0,0.00", System.Globalization.CultureInfo.InvariantCulture);
+
                     }
-                 
+                    else
+                    {
+                        MensajeError("No hay Stock Suficiente");
+                    }
+
                     
 
 
@@ -453,11 +436,8 @@ namespace CapaPresentacion
                 int indiceFila = this.dataListadoDetalle.CurrentCell.RowIndex;
                 DataRow row = this.dtDetalle.Rows[indiceFila];
                 //Disminuir el totalPAgado
-                this.totalPagado = this.totalPagado - float.Parse(row["Enganche"].ToString())-float.Parse(row["Anticipo"].ToString());
-                this.totalSaldo = this.totalSaldo - float.Parse(row["Saldo"].ToString());
-                //this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00#");
-                lblTotal_Pagado.Text = totalPagado.ToString("0,0.00", System.Globalization.CultureInfo.InvariantCulture);
-                lblTotal_Saldo.Text = totalSaldo.ToString("0,0.00", System.Globalization.CultureInfo.InvariantCulture);
+                this.totalPagado = this.totalPagado - Convert.ToDecimal(row["subtotal"].ToString());
+                this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00#");
                 //Removemos la fila
                 this.dtDetalle.Rows.Remove(row);
             }
@@ -482,23 +462,6 @@ namespace CapaPresentacion
             frm.Texto = Convert.ToString(dtFecha1.Value);
             frm.Texto2 = Convert.ToString(dtFecha2.Value);
             frm.ShowDialog();
-        }
-
-        private void btnMensualidades_Click(object sender, EventArgs e)
-        {
-            float PrecioVenta = float.Parse(txtPrecioVenta.Text.Trim());
-            float Enganche = float.Parse(txtEnganche.Text.Trim());
-            float Anticipo = float.Parse(txtAnticipo.Text.Trim());
-            FrmMensualidades frm = new FrmMensualidades();
-            frm.monto = PrecioVenta - Enganche - Anticipo;
-            frm.mens = int.Parse(txtMens.Text.Trim());
-            frm.ShowDialog();
-        }
-
-      
-        private void txtAnticipo_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
