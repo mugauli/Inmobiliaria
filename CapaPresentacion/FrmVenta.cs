@@ -463,5 +463,10 @@ namespace CapaPresentacion
             frm.Texto2 = Convert.ToString(dtFecha2.Value);
             frm.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

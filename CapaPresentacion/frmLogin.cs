@@ -37,11 +37,11 @@ namespace CapaPresentacion
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            DataTable Datos = CapaNegocio.NTrabajador.Login(this.TxtUsuario.Text,this.TxtPassword.Text);
+            DataTable Datos = CapaNegocio.NTrabajador.Login(this.TxtUsuario.Text, this.TxtPassword.Text);
             //Evaluar si existe el Usuario
-            if (Datos.Rows.Count==0)
+            if (Datos.Rows.Count == 0 || Datos == null)
             {
-                MessageBox.Show("NO Tiene Acceso al Sistema","Sistema de Ventas",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("NO Tiene Acceso al Sistema", "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

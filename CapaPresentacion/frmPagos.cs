@@ -16,5 +16,25 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void frmPagos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevoPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdventa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
