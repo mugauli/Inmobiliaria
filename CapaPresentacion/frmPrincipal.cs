@@ -287,5 +287,12 @@ namespace CapaPresentacion
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnPago_Click(object sender, EventArgs e)
+        {
+            frmPago frm = new frmPago();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>SisVentas_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DPago.cs" />
     <Compile Include="DParcela.cs" />
     <Compile Include="DLote.cs" />
     <Compile Include="Conexion.cs" />

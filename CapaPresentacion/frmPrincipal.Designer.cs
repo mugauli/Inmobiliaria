@@ -42,9 +42,9 @@
             this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.corredoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuConsultas = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +72,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.corredoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPagos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPago = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -83,6 +85,7 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuSistema,
             this.MnuAlmacen,
+            this.mnuPagos,
             this.MnuCompras,
             this.MnuVentas,
             this.MnuMantenimiento,
@@ -196,14 +199,6 @@
             this.ventasToolStripMenuItem1.Text = "Ventas";
             this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem1_Click);
             // 
-            // clientesToolStripMenuItem
-            // 
-            this.clientesToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.cliente_m;
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
-            // 
             // MnuMantenimiento
             // 
             this.MnuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -221,6 +216,14 @@
             this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.trabajadoresToolStripMenuItem.Text = "Vendedores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
+            // 
+            // corredoresToolStripMenuItem
+            // 
+            this.corredoresToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.proveedores_m;
+            this.corredoresToolStripMenuItem.Name = "corredoresToolStripMenuItem";
+            this.corredoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.corredoresToolStripMenuItem.Text = "Corredores";
+            this.corredoresToolStripMenuItem.Click += new System.EventHandler(this.corredoresToolStripMenuItem_Click);
             // 
             // MnuConsultas
             // 
@@ -444,13 +447,30 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(173, 17);
             this.toolStripStatusLabel.Text = "Sistema de Admon inmobiliaria";
             // 
-            // corredoresToolStripMenuItem
+            // clientesToolStripMenuItem
             // 
-            this.corredoresToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.proveedores_m;
-            this.corredoresToolStripMenuItem.Name = "corredoresToolStripMenuItem";
-            this.corredoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.corredoresToolStripMenuItem.Text = "Corredores";
-            this.corredoresToolStripMenuItem.Click += new System.EventHandler(this.corredoresToolStripMenuItem_Click);
+            this.clientesToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.cliente_m;
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // mnuPagos
+            // 
+            this.mnuPagos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnPago});
+            this.mnuPagos.Image = global::CapaPresentacion.Properties.Resources.coins_add;
+            this.mnuPagos.Name = "mnuPagos";
+            this.mnuPagos.Size = new System.Drawing.Size(67, 20);
+            this.mnuPagos.Text = "Pagos";
+            // 
+            // btnPago
+            // 
+            this.btnPago.Image = global::CapaPresentacion.Properties.Resources.agregar_p;
+            this.btnPago.Name = "btnPago";
+            this.btnPago.Size = new System.Drawing.Size(180, 22);
+            this.btnPago.Text = "Pago";
+            this.btnPago.Click += new System.EventHandler(this.btnPago_Click);
             // 
             // frmPrincipal
             // 
@@ -512,7 +532,6 @@
         private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuVentas;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem trabajadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuConsultas;
@@ -523,6 +542,9 @@
         private System.Windows.Forms.ToolStripButton TsCompras;
         private System.Windows.Forms.ToolStripButton TsVentas;
         private System.Windows.Forms.ToolStripMenuItem corredoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuPagos;
+        private System.Windows.Forms.ToolStripMenuItem btnPago;
     }
 }
 

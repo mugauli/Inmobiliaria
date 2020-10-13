@@ -39,7 +39,7 @@ namespace CapaPresentacion
         {
             DataTable Datos = CapaNegocio.NTrabajador.Login(this.TxtUsuario.Text,this.TxtPassword.Text);
             //Evaluar si existe el Usuario
-            if (Datos.Rows.Count==0)
+            if (Datos == null || Datos.Rows.Count==0)
             {
                 MessageBox.Show("NO Tiene Acceso al Sistema","Sistema de Ventas",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

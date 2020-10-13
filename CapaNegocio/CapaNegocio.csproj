@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>SisVentas_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
@@ -51,6 +51,7 @@
     <Compile Include="NCliente.cs" />
     <Compile Include="NIngreso.cs" />
     <Compile Include="NLote.cs" />
+    <Compile Include="NPago.cs" />
     <Compile Include="NParcela.cs" />
     <Compile Include="NPresentacion.cs" />
     <Compile Include="NProveedor.cs" />
