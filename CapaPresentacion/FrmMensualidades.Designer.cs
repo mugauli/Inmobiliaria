@@ -43,7 +43,6 @@
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnExporta = new System.Windows.Forms.Button();
             this.dataListado = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.label4 = new System.Windows.Forms.Label();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
@@ -51,10 +50,11 @@
             this.txtMes = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtmonto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ultraGridExcelExporter1 = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
+            this.btnExporta = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -90,21 +90,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnExporta
-            // 
-            this.btnExporta.BackColor = System.Drawing.Color.Silver;
-            this.btnExporta.Image = global::CapaPresentacion.Properties.Resources.imprimir;
-            this.btnExporta.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExporta.Location = new System.Drawing.Point(480, 51);
-            this.btnExporta.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExporta.Name = "btnExporta";
-            this.btnExporta.Size = new System.Drawing.Size(79, 28);
-            this.btnExporta.TabIndex = 26;
-            this.btnExporta.Text = "&Imprimir";
-            this.btnExporta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExporta.UseVisualStyleBackColor = false;
-            this.btnExporta.Click += new System.EventHandler(this.btnExporta_Click);
             // 
             // dataListado
             // 
@@ -227,21 +212,6 @@
             this.lblTotal.Size = new System.Drawing.Size(0, 13);
             this.lblTotal.TabIndex = 6;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
-            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar_p;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(480, 18);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(79, 28);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "&Buscar";
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // txtmonto
             // 
             this.txtmonto.Location = new System.Drawing.Point(96, 23);
@@ -261,6 +231,36 @@
             this.label1.Size = new System.Drawing.Size(322, 29);
             this.label1.TabIndex = 14;
             this.label1.Text = "Cálculo de mensualidades";
+            // 
+            // btnExporta
+            // 
+            this.btnExporta.BackColor = System.Drawing.Color.Silver;
+            this.btnExporta.Image = global::CapaPresentacion.Properties.Resources.imprimir;
+            this.btnExporta.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnExporta.Location = new System.Drawing.Point(480, 51);
+            this.btnExporta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExporta.Name = "btnExporta";
+            this.btnExporta.Size = new System.Drawing.Size(79, 28);
+            this.btnExporta.TabIndex = 26;
+            this.btnExporta.Text = "&Imprimir";
+            this.btnExporta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExporta.UseVisualStyleBackColor = false;
+            this.btnExporta.Click += new System.EventHandler(this.btnExporta_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
+            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar_p;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(480, 18);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(79, 28);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Calcular";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FrmMensualidades
             // 

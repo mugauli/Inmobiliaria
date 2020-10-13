@@ -280,5 +280,12 @@ namespace CapaPresentacion
             frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
 
         }
+
+        private void corredoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProveedor frm = new frmProveedor();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

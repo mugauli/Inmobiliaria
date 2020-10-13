@@ -12,7 +12,7 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class FrmVenta : Form
+    public partial class FrmCobro : Form
     {
         private bool IsNuevo = false;
         public int Idtrabajador;
@@ -49,7 +49,7 @@ namespace CapaPresentacion
             //this.dtFecha_Vencimiento.Value = fecha_vencimiento;
         }
 
-        public FrmVenta()
+        public FrmCobro()
         {
             InitializeComponent();
             this.ttMensaje.SetToolTip(this.txtCliente,"Seleccione un Cliente");
@@ -277,7 +277,6 @@ namespace CapaPresentacion
             this.txtSerie.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["serie"].Value);
             this.txtCorrelativo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["correlativo"].Value);
             this.lblTotal_Pagado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["total"].Value);
-            //this.lblTotal_Saldo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["saldo"].Value);
             this.MostrarDetalle();
             this.tabControl1.SelectedIndex = 1;
         }

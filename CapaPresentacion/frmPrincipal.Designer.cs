@@ -72,6 +72,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.corredoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -129,7 +130,7 @@
             // 
             this.artículosToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.productos_m1;
             this.artículosToolStripMenuItem.Name = "artículosToolStripMenuItem";
-            this.artículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.artículosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.artículosToolStripMenuItem.Text = "Parcelas";
             this.artículosToolStripMenuItem.Click += new System.EventHandler(this.artículosToolStripMenuItem_Click);
             // 
@@ -137,7 +138,7 @@
             // 
             this.categoríasToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.categoria;
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
-            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.categoríasToolStripMenuItem.Text = "Lotes";
             this.categoríasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
             // 
@@ -145,7 +146,7 @@
             // 
             this.presentacionesToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.Ver_recibo;
             this.presentacionesToolStripMenuItem.Name = "presentacionesToolStripMenuItem";
-            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.presentacionesToolStripMenuItem.Text = "Presentaciones";
             this.presentacionesToolStripMenuItem.Visible = false;
             this.presentacionesToolStripMenuItem.Click += new System.EventHandler(this.presentacionesToolStripMenuItem_Click);
@@ -206,7 +207,8 @@
             // MnuMantenimiento
             // 
             this.MnuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.trabajadoresToolStripMenuItem});
+            this.trabajadoresToolStripMenuItem,
+            this.corredoresToolStripMenuItem});
             this.MnuMantenimiento.Image = global::CapaPresentacion.Properties.Resources.report;
             this.MnuMantenimiento.Name = "MnuMantenimiento";
             this.MnuMantenimiento.Size = new System.Drawing.Size(117, 20);
@@ -217,7 +219,7 @@
             this.trabajadoresToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.empleados_b;
             this.trabajadoresToolStripMenuItem.Name = "trabajadoresToolStripMenuItem";
             this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.trabajadoresToolStripMenuItem.Text = "Trabajadores";
+            this.trabajadoresToolStripMenuItem.Text = "Vendedores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
             // 
             // MnuConsultas
@@ -442,6 +444,14 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(173, 17);
             this.toolStripStatusLabel.Text = "Sistema de Admon inmobiliaria";
             // 
+            // corredoresToolStripMenuItem
+            // 
+            this.corredoresToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.proveedores_m;
+            this.corredoresToolStripMenuItem.Name = "corredoresToolStripMenuItem";
+            this.corredoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.corredoresToolStripMenuItem.Text = "Corredores";
+            this.corredoresToolStripMenuItem.Click += new System.EventHandler(this.corredoresToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,6 +522,7 @@
         private System.Windows.Forms.ToolStripMenuItem backUpBDToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton TsCompras;
         private System.Windows.Forms.ToolStripButton TsVentas;
+        private System.Windows.Forms.ToolStripMenuItem corredoresToolStripMenuItem;
     }
 }
 
