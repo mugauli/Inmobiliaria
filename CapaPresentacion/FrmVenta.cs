@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocio;
+using CapaPresentacion.Reportes;
 
 namespace CapaPresentacion
 {
@@ -471,8 +472,8 @@ namespace CapaPresentacion
         private void btnComprobante_Click(object sender, EventArgs e)
         {
             
-            FrmReporteFactura frm = new FrmReporteFactura();
-            frm.Idventa = Convert.ToInt32(this.dataListado.CurrentRow.Cells["idventa"].Value);
+            FrmReporteParcelas frm = new FrmReporteParcelas();
+            //frm.Idventa = Convert.ToInt32(this.dataListado.CurrentRow.Cells["idventa"].Value);
             frm.ShowDialog();
 
         }

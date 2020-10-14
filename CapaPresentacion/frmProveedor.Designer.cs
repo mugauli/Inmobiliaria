@@ -117,9 +117,9 @@
             this.label4.Location = new System.Drawing.Point(20, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Razón Social:";
+            this.label4.Text = "Nombre:";
             // 
             // label3
             // 
@@ -242,14 +242,15 @@
             // 
             this.cbTipo_Documento.FormattingEnabled = true;
             this.cbTipo_Documento.Items.AddRange(new object[] {
-            "DNI",
-            "RUC"});
+            "INE",
+            "IFE",
+            "PASAPORTE"});
             this.cbTipo_Documento.Location = new System.Drawing.Point(116, 100);
             this.cbTipo_Documento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbTipo_Documento.Name = "cbTipo_Documento";
             this.cbTipo_Documento.Size = new System.Drawing.Size(92, 21);
             this.cbTipo_Documento.TabIndex = 13;
-            this.cbTipo_Documento.Text = "RUC";
+            this.cbTipo_Documento.Text = "INE";
             // 
             // label7
             // 
@@ -276,6 +277,7 @@
             this.cbSector_Comercial.Size = new System.Drawing.Size(92, 21);
             this.cbSector_Comercial.TabIndex = 11;
             this.cbSector_Comercial.Text = "Alimentos";
+            this.cbSector_Comercial.Visible = false;
             // 
             // label6
             // 
@@ -286,6 +288,7 @@
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Sector Comercial:";
+            this.label6.Visible = false;
             // 
             // btnCancelar
             // 

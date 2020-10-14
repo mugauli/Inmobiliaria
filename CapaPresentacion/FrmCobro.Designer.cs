@@ -163,7 +163,7 @@
             this.cbTipo_Comprobante.Name = "cbTipo_Comprobante";
             this.cbTipo_Comprobante.Size = new System.Drawing.Size(92, 21);
             this.cbTipo_Comprobante.TabIndex = 23;
-            this.cbTipo_Comprobante.Text = "TICKET";
+            this.cbTipo_Comprobante.Text = "Cobro";
             // 
             // label13
             // 
